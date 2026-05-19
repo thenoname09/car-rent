@@ -30,22 +30,22 @@ export default function  RegisterPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    
-    
-    // const {data, error} = await authClient.signUp.email({
-    //     name,
-    //     email,
-    //     password,
-    //     image,
-        
-    // })
-    
+    const formData = new FormData(e.currentTarget)
+
+    const addCars = Object.fromEntries(formData.entries())
+
   
-    console.log(data, error);
+    console.log( error , addCars);
+
+    const res = await fetch("http://localhost:4000/cars_info", {
+      method: 'post',
+      headers:{'content-type' : 'application/json' },
+      body : JSON.stringify(addCars)
+
+    })
+    const data = await res.json()
+
+    console.log(data)
 
     //   if(!error) {
     //    router.refresh()
@@ -99,7 +99,7 @@ export default function  RegisterPage() {
         </TextField>
 
           <div className=" space-y-4">
-      <Select fullWidth isRequired placeholder="Select one">
+      <Select name="car_type" fullWidth isRequired placeholder="Select one">
         <Label>Car Type</Label>
         <Select.Trigger>
           <Select.Value />
@@ -163,7 +163,7 @@ export default function  RegisterPage() {
      
     </TextField>
          <div className=" space-y-4">
-      <Select isRequired fullWidth placeholder="Select one">
+      <Select name="availability_status"  isRequired fullWidth placeholder="Select one">
         <Label>Availability Status</Label>
         <Select.Trigger>
           <Select.Value />
@@ -171,11 +171,11 @@ export default function  RegisterPage() {
         </Select.Trigger>
         <Select.Popover>
           <ListBox>
-            <ListBox.Item id="available" textValue="available">
+            <ListBox.Item id="Available" textValue="available">
               Available
               <ListBox.ItemIndicator />
             </ListBox.Item>
-            <ListBox.Item id="unavailable" textValue="unavailable">
+            <ListBox.Item id="Unavailable" textValue="unavailable">
               Unavailable
               <ListBox.ItemIndicator />
             </ListBox.Item>
