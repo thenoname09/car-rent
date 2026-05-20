@@ -15,6 +15,7 @@ const AvailablecarCard = ({ carData }) => {
     availability_status,
     location,
     name,
+    _id,
   } = carData;
   return (
     <div className="group flex flex-col bg-[#DDE6ED] rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -59,7 +60,7 @@ const AvailablecarCard = ({ carData }) => {
           ${price}/<span className="text-xl">day</span>
         </h3>
         <div className="pt-5 mt-auto border-t border-slate-100  flex justify-between items-center">
-       <Link href={`/`} className="w-full">
+       <Link href={`/explore-cars/${_id}`} className="w-full">
             <Button
                 variant="flat"
                 color="primary"

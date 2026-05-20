@@ -16,6 +16,7 @@ const CarCard = ({ exploreCar }) => {
     availability_status,
     location,
     name,
+    _id,
   } = exploreCar;
   return (
     <div
@@ -63,7 +64,7 @@ const CarCard = ({ exploreCar }) => {
           ${price}/<span className="text-xl">day</span>
         </h3>
         <div className="pt-5 mt-auto border-t border-slate-100  flex justify-between items-center">
-          <Link href={`/`} className="w-full">
+          <Link href={`/explore-cars/${_id}`} className="w-full">
             <Button
               variant="flat"
               color="primary"
