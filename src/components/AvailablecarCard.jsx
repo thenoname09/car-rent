@@ -1,12 +1,11 @@
 import { Button, Chip } from "@heroui/react";
-import { BookOpen, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdAirlineSeatReclineExtra } from "react-icons/md";
 
-const CarCard = ({ exploreCar }) => {
+const AvailablecarCard = ({ carData }) => {
   const {
     image,
     price,
@@ -16,24 +15,21 @@ const CarCard = ({ exploreCar }) => {
     availability_status,
     location,
     name,
-  } = exploreCar;
+  } = carData;
   return (
-    <div
-      className="group flex flex-col bg-[#DDE6ED]
-         rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-    >
+    <div className="group flex flex-col bg-[#DDE6ED] rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative overflow-hidden aspect-16/10">
         <Image
-          alt="Course Image"
+          alt={name}
           className="object-cover group-hover:scale-110 transition-transform duration-700"
           src={image}
           fill
         />
-        <div className="absolute top-4 right-4">
+        <div className="">
           <Chip
             color={availability_status === "Available" ? "success" : "danger"}
             variant="solid"
-            className="font-bold shadow-lg"
+            className="font-bold  text-sm shadow-lg py-1.5 absolute top-4 right-4 text-center items-center"
           >
             {availability_status}
           </Chip>
@@ -46,9 +42,9 @@ const CarCard = ({ exploreCar }) => {
           <h3 className="text-2xl font-black leading-tight text-[#252525] line-clamp-2 hover:text-[#27374D] transition-colors">
             {name}
           </h3>
-          <p className="text-sm text-[#545454] font-medium line-clamp-2">
+           <p className="text-sm text-[#545454] font-medium line-clamp-2">
             {description}
-          </p>
+        </p>
         </div>
 
         <div className="flex  flex-col gap-2 text-[15px] text-[#526D82] font-bold">
@@ -63,21 +59,23 @@ const CarCard = ({ exploreCar }) => {
           ${price}/<span className="text-xl">day</span>
         </h3>
         <div className="pt-5 mt-auto border-t border-slate-100  flex justify-between items-center">
-          <Link href={`/`} className="w-full">
+       <Link href={`/`} className="w-full">
             <Button
-              variant="flat"
-              color="primary"
-              className="font-bold rounded-xl py-3 text-base 
-                                     bg-[#27374D] hover:bg-[#526D82]   
-                                     text-[#DDE6ED] w-full transition-colors"
+                variant="flat"
+                color="primary"
+              
+                className="font-bold rounded-xl py-3 text-base 
+                           bg-[#27374D] hover:bg-[#526D82]   
+                           text-[#DDE6ED] w-full transition-colors"
+                      
             >
-              View Details
+                View Details
             </Button>
-          </Link>
+        </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default CarCard;
+export default AvailablecarCard;
