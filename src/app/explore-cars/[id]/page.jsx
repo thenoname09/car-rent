@@ -61,7 +61,7 @@ const CarDetailsPage = async ({ params }) => {
               </div>
 
               {/* ── Right: Details ── */}
-              <div className="p-8 flex flex-col gap-5">
+              <div className="p-8 flex flex-col gap-5 ">
                 {/* Name & Price */}
                 <div>
                     <h2 className=" text-[#27374D]text-xs font-bold

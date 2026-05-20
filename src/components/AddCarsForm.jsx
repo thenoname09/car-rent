@@ -63,7 +63,7 @@ export default function  RegisterPage() {
 //         provider: 'google'
 //     })
   }
-   const [isShowPassword, setIsShowPassword] = useState(false);
+  
 
   return (
     <Card className="border bg-stone-100 mx-auto w-200 py-10 mt-5 mb-10 ">
