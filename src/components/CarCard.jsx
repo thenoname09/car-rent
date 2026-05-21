@@ -34,7 +34,7 @@ const CarCard = ({ exploreCar }) => {
           <Chip
             color={availability_status === "Available" ? "success" : "danger"}
             variant="solid"
-            className="font-bold shadow-lg"
+            className="font-bold shadow-lg tracking-[1px] "
           >
             {availability_status}
           </Chip>
@@ -43,7 +43,7 @@ const CarCard = ({ exploreCar }) => {
 
       <div className="p-8 flex flex-col grow space-y-4 text-left">
         <div className="space-y-2">
-          <h2 className="font-bold text-xl text-[#27374D]">{car_type}</h2>
+          <h2 className="font-bold text-xl tracking-[1px] uppercase text-[#27374D]">{car_type}</h2>
           <h3 className="text-2xl font-black leading-tight text-[#252525] line-clamp-2 hover:text-[#27374D] transition-colors">
             {name}
           </h3>
