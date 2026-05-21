@@ -47,21 +47,7 @@ export default function  RegisterPage() {
 
     console.log(data)
 
-    //   if(!error) {
-    //    router.refresh()
-    //     router.push('/')
-    // }
-    //    if (error) {
-      
-    //   setError(error.message || "Registration failed. Please try again.");
-    //   return;
-    // }
-    
-//   };
-//  const handlGoogleSignIn = async () => {
-//     await authClient.signIn.social({
-//         provider: 'google'
-//     })
+  
   }
   
 

@@ -1,3 +1,5 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import { Envelope } from "@gravity-ui/icons";
 import {
   Button,
@@ -9,8 +11,13 @@ import {
   Select,
   ListBox,
   TextArea,
+  DateField,
+  Description,
+  FieldError,
 } from "@heroui/react";
 import React from "react";
+import { getLocalTimeZone, today } from "@internationalized/date";
+import { useState } from "react";
 
 const BookingModal = ({ CarDetails }) => {
   const {
@@ -24,6 +31,52 @@ const BookingModal = ({ CarDetails }) => {
     location,
     availability_status,
   } = CarDetails;
+  // console.log(CarDetails);
+
+  const [bookingDate, setBookingDate] = useState(null);
+  const todayDate = today(getLocalTimeZone());
+  const isInvalid = bookingDate !== null && bookingDate.compare(todayDate) < 0;
+
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+
+  
+
+  const handleBooking = async () => {
+    // if (!user) {
+    //   console.log("User not logged in");
+    //   return;
+    // }
+    const bookingData = {
+      userId: user.id,
+      userEmail: user.email,
+
+      userImage: user.image,
+      userName: user.name,
+      carId: _id,
+      car_type,
+      carImage: image,
+      carLocation: location,
+      carPrice: price,
+      carName: name,
+      bookingDate: new Date(bookingDate),
+    };
+    
+    const res= await fetch("http://localhost:4000/bookings",{
+        method: 'post',
+      headers:{'content-type' : 'application/json' },
+      body : JSON.stringify(bookingData)
+
+    })
+
+    const data= await res.json()
+
+console.log(data);
+
+
+
+
+  };
   return (
     <Modal>
       <Button
@@ -38,6 +91,9 @@ const BookingModal = ({ CarDetails }) => {
       >
         Book Now
       </Button>
+      
+
+      
       <Modal.Backdrop>
         <Modal.Container placement="auto">
           <Modal.Dialog className="sm:max-w-md">
@@ -78,10 +134,38 @@ const BookingModal = ({ CarDetails }) => {
                       </Select.Popover>
                     </Select>
                   </div>
+                  <div className="flex flex-col gap-4">
+                    <DateField
+                      isRequired
+                      className=""
+                      isInvalid={isInvalid}
+                      minValue={todayDate}
+                      name="date"
+                      value={bookingDate}
+                      onChange={setBookingDate}
+                    >
+                      <Label>Booking Date</Label>
+                      <DateField.Group variant="secondary">
+                        <DateField.Input>
+                          {(segment) => <DateField.Segment segment={segment} />}
+                        </DateField.Input>
+                      </DateField.Group>
+                      {isInvalid ? (
+                        <FieldError>
+                          Date must be today or in the future
+                        </FieldError>
+                      ) : (
+                        <Description className="pl-2">
+                          Enter a date from today onwards
+                        </Description>
+                      )}
+                    </DateField>
+                  </div>
+
                   <TextField className="w-full " name="description">
                     <Label>Description</Label>
                     <TextArea
-                    variant="secondary"
+                      variant="secondary"
                       placeholder="Write your message here..."
                       rows={3}
                     />
@@ -90,14 +174,25 @@ const BookingModal = ({ CarDetails }) => {
               </Surface>
             </Modal.Body>
             <Modal.Footer>
-              <Button slot="close" variant="secondary" className={"text-[#27374D]"}>
+              <Button
+                slot="close"
+                variant="secondary"
+                className={"text-[#27374D]"}
+              >
                 Cancel
               </Button>
-              <Button slot="close" className={"bg-[#27374D] text-white hover:bg-[#27374D]/95"}>Confirm Booking</Button>
+              <Button
+                slot="close"
+                onClick={handleBooking}
+                className={"bg-[#27374D] text-white hover:bg-[#27374D]/95"}
+              >
+                Confirm Booking
+              </Button>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal.Container>
       </Modal.Backdrop>
+      
     </Modal>
   );
 };

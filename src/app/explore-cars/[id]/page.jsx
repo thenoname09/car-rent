@@ -139,18 +139,7 @@ const CarDetailsPage = async ({ params }) => {
                 {/* Book Now Button */}
 
                 <BookingModal key={id} CarDetails={CarDetails} ></BookingModal>
-                {/* <Button
-                  isDisabled={availability_status !== "Available"}
-                  className={`w-full  font-black
-                         text-base py-6 rounded-2xl transition-all duration-200
-                         shadow-lg shadow-lime-400/30 disabled:opacity-50 ${
-                      availability_status === "Available"
-                        ? "text-white bg-[#526D82] hover:bg-[#4c6475]"
-                        : "bg-[#DDE6ED]  text-black"
-                    }`}
-                >
-                  Book Now
-                </Button> */}
+              
               </div>
             </div>
           </div>
