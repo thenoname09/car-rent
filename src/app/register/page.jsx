@@ -9,6 +9,7 @@ import {
   Form,
   Input,
   Label,
+  Separator,
   TextField,
 } from "@heroui/react";
 import { Card } from "@heroui/react";
@@ -16,8 +17,8 @@ import { Card } from "@heroui/react";
 import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
+import { BsGoogle } from "react-icons/bs";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -44,13 +45,19 @@ const RegisterPage = () => {
       return;
     }
   };
+  const handleGoogleLogIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   const [isShowPassword, setIsShowPassword] = useState(false);
   return (
     <div className=" bg-[#DDE6ED]/30 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl border border-[#DDE6ED]">
         <RegisterLeft></RegisterLeft>
 
-        <Card className="items-center  ">
+        <Card className="items-center pb-11 pt-8">
           <div className="">
             <p className="text-[#9DB2BF] text-xs font-bold tracking-[3px] uppercase mb-2">
               Register
@@ -58,7 +65,7 @@ const RegisterPage = () => {
             <h1 className="text-[#27374D] text-4xl font-black mb-1">
               Welcome to DriveFleet
             </h1>
-            <p className="text-[#7D7D7D] text-sm mb-7">
+            <p className="text-[#7D7D7D] text-sm mb-3">
               Already have an account?
               <Link
                 href="/login"
@@ -155,6 +162,22 @@ const RegisterPage = () => {
               </Button>
             </div>
           </Form>
+
+          <div className="flex justify-center text-sm items-center text-muted gap-9">
+            <Separator variant="default" />
+            or
+            <Separator variant="default" />
+          </div>
+
+          <div className="flex justify-center items-center w-auto md:w-96 mx-auto ">
+            <Button
+              onClick={handleGoogleLogIn}
+              variant="outline"
+              className=" w-full text-center  items-center"
+            >
+              <BsGoogle /> LogIn With Google
+            </Button>
+          </div>
         </Card>
       </div>
     </div>
