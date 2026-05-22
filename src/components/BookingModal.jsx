@@ -18,6 +18,7 @@ import {
 import React from "react";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const BookingModal = ({ CarDetails }) => {
   const {
@@ -48,11 +49,11 @@ const BookingModal = ({ CarDetails }) => {
     //   return;
     // }
     const bookingData = {
-      userId: user.id,
-      userEmail: user.email,
+      userId: user?.id,
+      userEmail: user?.email,
 
-      userImage: user.image,
-      userName: user.name,
+      userImage: user?.image,
+      userName: user?.name,
       carId: _id,
       car_type,
       carImage: image,
@@ -72,7 +73,7 @@ const BookingModal = ({ CarDetails }) => {
     const data= await res.json()
 
 console.log(data);
-
+toast.success('Successfully Booking!')
 
 
 
