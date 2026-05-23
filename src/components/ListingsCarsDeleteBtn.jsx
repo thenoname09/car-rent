@@ -17,7 +17,7 @@ const ListingsCarsDeleteBtn = ({ListingsCar}) => {
         const data = await res.json()
          
 
-        //  window.location.reload()
+         window.location.reload()
          toast.success('Successfully Deleted!')
     }
     return (

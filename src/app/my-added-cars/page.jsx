@@ -1,6 +1,8 @@
 import ListingsCarsDeleteBtn from "@/components/ListingsCarsDeleteBtn";
 import { auth } from "@/lib/auth";
 import { LocationArrow } from "@gravity-ui/icons";
+import { Button } from "@heroui/react";
+import { Link2Icon } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +19,8 @@ const MyListingsCarsPage = async () => {
     `${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${user?.id}`,
   );
   const ListingsCars = await res.json();
-  console.log(ListingsCars);
+ 
+
   return (
     <div className="bg-[#DDE6ED]/40 ">
       <div className=" max-w-7xl mx-auto py-12 px-4 ">
@@ -61,7 +64,7 @@ const MyListingsCarsPage = async () => {
                                   </Link>
 
                 </div> */}
-                  <div className="flex flex-col gap-1.5 pt-1 ">
+                <div className="flex flex-col gap-1.5 pt-1 ">
                   <Link
                     href={`/explore-cars/${ListingsCar._id}`}
                     className="text-2xl font-black leading-tight text-[#27374D]"
@@ -72,11 +75,7 @@ const MyListingsCarsPage = async () => {
                     <span className="font-semibold text-[#27374D] ">
                       {ListingsCar.car_type}
                     </span>{" "}
-                     .
-                      <span className="pl-1">
-                         {ListingsCar.location}
-                      </span>
-                      
+                    .<span className="pl-1">{ListingsCar.location}</span>
                   </p>
                   <p className="text-lg font-black text-[#27374D]">
                     ${ListingsCar.price}
@@ -89,7 +88,6 @@ const MyListingsCarsPage = async () => {
                       ListingsCar.availability_status === "Available"
                         ? "bg-green-50 text-green-700"
                         : "bg-amber-50 text-amber-700"
-                        
                     }`}
                   >
                     {ListingsCar.availability_status}
@@ -99,18 +97,22 @@ const MyListingsCarsPage = async () => {
 
               {/* btn */}
               <div className="items-center flex flex-col gap-4 justify-center  text-center p-4">
-
-                  <span
+                <Link
+                  href={`/my-added-cars/${ListingsCar._id}/edit`}
+                  className=""
+                >
+                  <Button
                     className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold 
-                             px-4 py-1.5 rounded-full w-full uppercase tracking-wider cursor-pointer transition-transform duration-700 "
+                             px-4 py-1.5 rounded-full w-full uppercase  cursor-pointer transition-transform duration-700 "
                   >
                     edit
-                  </span>
-                  <ListingsCarsDeleteBtn ListingsCar={ListingsCar}></ListingsCarsDeleteBtn>
+                  </Button>
                   
+                </Link>
+                <ListingsCarsDeleteBtn
+                  ListingsCar={ListingsCar}
+                ></ListingsCarsDeleteBtn>
               </div>
-
-              
             </div>
           ))}
         </div>

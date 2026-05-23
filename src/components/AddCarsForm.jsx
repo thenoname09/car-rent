@@ -15,8 +15,9 @@ import {
   TextArea,
 } from "@heroui/react";
 
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { BsGoogle } from "react-icons/bs";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -44,7 +45,6 @@ export default function RegisterPage() {
       userEmail: user?.email,
       
     };
-console.log(finalData);
 
     
 
@@ -55,7 +55,14 @@ console.log(finalData);
     });
     const data = await res.json();
 
-    console.log(data);
+    toast.success('Successfully Added Your Car!')
+        if (data) {
+         
+          redirect("/my-added-cars");
+        }
+
+
+     
   };
 
   return (
@@ -118,7 +125,7 @@ console.log(finalData);
                   Hatchback
                   <ListBox.ItemIndicator />
                 </ListBox.Item>
-                <ListBox.Item id="Electric " textValue="Electric">
+                <ListBox.Item id="Electric" textValue="Electric">
                   Electric
                   <ListBox.ItemIndicator />
                 </ListBox.Item>

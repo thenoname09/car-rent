@@ -19,6 +19,7 @@ import React from "react";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const BookingModal = ({ CarDetails }) => {
   const {
@@ -72,9 +73,12 @@ const BookingModal = ({ CarDetails }) => {
 
     const data= await res.json()
 
-    console.log(data);
+   
     toast.success('Successfully Booking!')
-
+  if (data) {
+         
+          redirect("/my-bookings");
+        }
 
 
   };
