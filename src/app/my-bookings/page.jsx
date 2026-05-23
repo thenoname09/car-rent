@@ -12,7 +12,7 @@ const MyBookingsPage = async () => {
 
   const user = session?.user;
 
-  const res = await fetch(`${process.env.Server_API}/bookings/${user?.id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/bookings/${user?.id}`);
   const bookings = await res.json();
   console.log(bookings);
 
@@ -99,8 +99,8 @@ const MyBookingsPage = async () => {
                   </h3>
 
                   <span
-                    className="bg-[#DDE6ED] text-[#27374D] text-xs font-bold 
-                             px-4 py-1.5 rounded-full uppercase tracking-wider"
+                    className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold 
+                             px-4 py-1.5 rounded-full uppercase tracking-wider cursor-pointer transition-transform duration-700 "
                   >
                     Cancel Booking
                   </span>

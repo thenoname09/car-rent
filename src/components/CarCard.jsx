@@ -17,6 +17,7 @@ const CarCard = ({ exploreCar }) => {
     location,
     name,
     _id,
+   
   } = exploreCar;
   return (
     <div

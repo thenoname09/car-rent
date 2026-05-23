@@ -21,13 +21,11 @@ const CarDetailsPage = async ({ params }) => {
     location,
     availability_status,
     booking_count,
-    owner_name,
-    owner_email,
+    userName,
   } = CarDetails;
 
   return (
     <div>
-      
       <div>
         <div className="min-h-screen bg-[#DDE6ED]/30 py-12 px-4">
           <div className="max-w-6xl mx-auto">
@@ -56,16 +54,18 @@ const CarDetailsPage = async ({ params }) => {
                     fill
                   />
                 </div>
-
-               
               </div>
 
               {/* ── Right: Details ── */}
               <div className="p-8 flex flex-col gap-5 ">
                 {/* Name & Price */}
                 <div>
-                    <h2 className=" text-[#27374D]text-xs font-bold
-                               px-4 pb-3 rounded-full uppercase">{car_type}</h2>
+                  <h2
+                    className=" text-[#27374D]text-xs font-bold
+                               px-4 pb-3 rounded-full uppercase"
+                  >
+                    {car_type}
+                  </h2>
                   <h1 className="text-4xl font-black text-[#252525] mb-2">
                     {name}
                   </h1>
@@ -80,46 +80,47 @@ const CarDetailsPage = async ({ params }) => {
                   </div>
                 </div>
 
-                {/* Description */}
                 <p
-                  className="text-[#545454] text-sm 
+                  className="text-[#545454] text-sm  capitalize
                           pl-4 italic"
                 >
                   {description}
                 </p>
 
-                {/* Info Pills */}
-  <div className="flex flex-col gap-3">
- 
-              <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
-                <CalendarDays className="w-4 h-4 text-[#526D82] shrink-0" />
-                <span className="text-sm font-semibold text-[#27374D]">
-                  Booked by {booking_count} user{booking_count !== 1 ? "s" : ""}
-                </span>
-              </div>
- 
-              <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
-                <Users className="w-4 h-4 text-[#526D82] shrink-0" />
-                <span className="text-sm font-semibold text-[#27374D]">
-                  {seat_capacity} seats
-                </span>
-              </div>
- 
-              <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
-                <MapPin className="w-4 h-4 text-[#526D82] shrink-0" />
-                <span className="text-sm font-semibold text-[#27374D]">
-                  {location}
-                </span>
-              </div>
- 
-              <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
-                <User className="w-4 h-4 text-[#526D82] shrink-0" />
-                <span className="text-sm font-semibold text-[#27374D]">
-                  Owner: 
-                  <span className="text-[#526D82] font-normal"></span>
-                </span>
-              </div>
-            </div>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
+                    <CalendarDays className="w-4 h-4 text-[#526D82] shrink-0" />
+                    <span className="text-sm font-semibold text-[#27374D]">
+                      Booked by {booking_count} user
+                      {booking_count !== 1 ? "s" : ""}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
+                    <Users className="w-4 h-4 text-[#526D82] shrink-0" />
+                    <span className="text-sm font-semibold text-[#27374D]">
+                      {seat_capacity} seats
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
+                    <MapPin className="w-4 h-4 text-[#526D82] shrink-0" />
+                    <span className="text-sm font-semibold text-[#27374D] capitalize">
+                      {location}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 bg-[#DDE6ED]/50 rounded-xl px-4 py-3">
+                    <User className="w-4 h-4 text-[#526D82] shrink-0" />
+                    <span className="text-sm font-semibold text-[#27374D] ">
+                      Owner: 
+                      <span className="text-[#27374D]/80 font-semibold pl-1 text-sm capitalize">
+                        
+                        {userName || "DriveFleet"}
+                      </span>
+                    </span>
+                  </div>
+                </div>
                 {/* Status */}
                 <div className="bg-[#27374D] rounded-2xl px-5 py-4">
                   <p className="text-[#9DB2BF] text-xs font-bold tracking-[3px] uppercase mb-1">
@@ -138,8 +139,7 @@ const CarDetailsPage = async ({ params }) => {
 
                 {/* Book Now Button */}
 
-                <BookingModal key={id} CarDetails={CarDetails} ></BookingModal>
-              
+                <BookingModal key={id} CarDetails={CarDetails}></BookingModal>
               </div>
             </div>
           </div>

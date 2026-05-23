@@ -87,7 +87,7 @@ console.log(finalData);
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="Price" type="number">
+        <TextField isRequired name="price" type="number">
           <Label>Daily Rent Price</Label>
           <Input placeholder="Daily Rent Price" />
           <FieldError />

@@ -63,7 +63,7 @@ const BookingModal = ({ CarDetails }) => {
       bookingDate: new Date(bookingDate),
     };
     
-    const res= await fetch("http://localhost:4000/bookings",{
+     const res= await fetch("http://localhost:4000/bookings",{
         method: 'post',
       headers:{'content-type' : 'application/json' },
       body : JSON.stringify(bookingData)
@@ -72,8 +72,8 @@ const BookingModal = ({ CarDetails }) => {
 
     const data= await res.json()
 
-console.log(data);
-toast.success('Successfully Booking!')
+    console.log(data);
+    toast.success('Successfully Booking!')
 
 
 
