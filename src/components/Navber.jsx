@@ -88,7 +88,7 @@ const router = useRouter()
                 <Button
                   aria-label="Menu"
                   variant="letter-soft"
-                  className="flex items-center gap-3 px-4 py-5 border  bg-slate-50 rounded-full"
+                  className="flex items-center gap-3 px-4 py-6 border  bg-[#27374D]/70 rounded-full "
                 >
                   <Avatar size="sm">
 
@@ -98,7 +98,7 @@ const router = useRouter()
                     </Avatar.Fallback>
                   </Avatar>
 
-                  <p className="font-semibold text-xs items-center text-center text-black">
+                  <p className="font-semibold text-sm  items-center text-center text-[#DDE6ED]">
                     {user.name?.split(" ")[0]}
                   </p>
                 </Button>

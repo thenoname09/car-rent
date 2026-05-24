@@ -16,8 +16,8 @@ const UpdateCarPage = async ({ params }) => {
 
   return (
     <div className="bg-[#DDE6ED] ">
-      <div className="flex max-w-6xl mx-auto justify-between text-center  py-10 items-center">
-        <h1 className="text-6xl font-bold   text-[#27374D] text-left ">
+      <div className="flex max-w-6xl mx-auto justify-between text-center  px-4 py-6 md:py-10 gap-4 items-center">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold   text-[#27374D] text-left ">
           Update Car details
         </h1>
 
@@ -27,7 +27,8 @@ const UpdateCarPage = async ({ params }) => {
                                      font-semibold text-sm  transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back 
+          <span className="hidden sm:inline">Back to My Cars</span> 
+          <span className="sm:hidden">Back</span>  
         </Link>
       </div>
 

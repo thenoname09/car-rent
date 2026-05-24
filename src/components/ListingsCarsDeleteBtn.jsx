@@ -22,9 +22,9 @@ const ListingsCarsDeleteBtn = ({ListingsCar}) => {
     }
     return (
         <AlertDialog>
-              <Button variant="danger"
-                    className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold 
-                             px-4 py-1.5 rounded-full uppercase tracking-wider cursor-pointer transition-transform duration-700 "
+              <Button variant="danger "
+                    className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold w-full 
+                             px-4 py-1.5 rounded-full  uppercase tracking-wider cursor-pointer transition-colors  duration-300  "
                   >
                     Delete
                   </Button>

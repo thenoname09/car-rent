@@ -27,7 +27,7 @@ const CarDetailsPage = async ({ params }) => {
   return (
     <div>
       <div>
-        <div className="min-h-screen bg-[#DDE6ED]/30 py-12 px-4">
+        <div className="min-h-screen bg-[#DDE6ED]/30 py-12  md:py-12 px-4">
           <div className="max-w-6xl mx-auto">
             {/* Back Button */}
             <Link
@@ -45,8 +45,8 @@ const CarDetailsPage = async ({ params }) => {
                         shadow-xl overflow-hidden border border-[#DDE6ED]"
             >
               {/* ── Left: Image ── */}
-              <div className="relative bg-[#DDE6ED]/40 p-6 flex items-center justify-center ">
-                <div className="relative overflow-hidden aspect-16/10  w-full h-95 rounded-2xl  shadow-lg">
+              <div className="relative bg-[#DDE6ED]/40  p-4 md:p-6 flex items-center justify-center ">
+                <div className="relative overflow-hidden aspect-16/10 sm:aspect-[16/9]   w-full h-95 rounded-2xl  shadow-lg">
                   <Image
                     alt={name}
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -56,22 +56,22 @@ const CarDetailsPage = async ({ params }) => {
                 </div>
               </div>
 
-              {/* ── Right: Details ── */}
-              <div className="p-8 flex flex-col gap-5 ">
+              {/* ── Right ── */}
+              <div className="p-5 md:p-8  flex flex-col gap-5 ">
                 {/* Name & Price */}
                 <div>
                   <h2
-                    className=" text-[#27374D]text-xs font-bold
+                    className=" text-[#27374D] text-xs font-bold
                                px-4 pb-3 rounded-full uppercase"
                   >
                     {car_type}
                   </h2>
-                  <h1 className="text-4xl font-black text-[#252525] mb-2">
+                  <h1 className="text-2xl md:text-4xl font-black text-[#252525] mb-2">
                     {name}
                   </h1>
 
                   <div className="flex items-baseline gap-1 pt-2">
-                    <span className="text-3xl font-black text-[#252525]">
+                    <span className="text-2xl md:text-3xl font-black text-[#252525]">
                       ${price}
                     </span>
                     <span className="text-[#9DB2BF] font-semibold text-base">

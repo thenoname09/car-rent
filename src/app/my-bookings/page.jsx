@@ -18,13 +18,13 @@ const MyBookingsPage = async () => {
 
   return (
     <div className="bg-[#DDE6ED]/40 ">
-      <div className=" max-w-7xl mx-auto py-12 px-4 ">
-        <h1 className="text-5xl font-black text-[#27374D] pl-4 mb-10">
+      <div className=" max-w-7xl mx-auto py-8 px-4 md:py-12">
+        <h1 className="text-3xl md:text-5xl font-black text-[#27374D] pl-4 mb-10">
           My Bookings
         </h1>
 
           {bookings.length === 0 && (
-          <div className="text-center py-20 bg-white rounded-3xl border border-[#DDE6ED]">
+          <div className="text-center py-16 md:py-20 bg-white rounded-3xl border border-[#DDE6ED]">
            
             <h2 className="text-xl font-black text-[#27374D] mb-2">No bookings yet</h2>
             <p className="text-[#9DB2BF] text-sm">Start by exploring our available cars.</p>
@@ -35,13 +35,13 @@ const MyBookingsPage = async () => {
           {bookings.map((booking) => (
             <div
               key={booking._id}
-              className="flex gap-5 rounded-2xl border border-[#DDE6ED] 
-                   bg-white p-5 hover:shadow-md hover:-translate-y-0.5 
-                   transition-all duration-300"
-            >
+              className="flex flex-col sm:flex-row gap-4 md:gap-5 rounded-2xl border border-[#DDE6ED]
+                     bg-white p-4 md:p-5 hover:shadow-md hover:-translate-y-0.5
+                     transition-all duration-300"
+              >
               <Image
                 alt={booking.carName}
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover  w-full sm:w-[200px]  shrink-0"
                 src={booking.carImage}
                 height={200}
                 width={200}
@@ -61,12 +61,12 @@ const MyBookingsPage = async () => {
               <h3 className="text-2xl font-bold items-center text-[#252525]">
                 ${booking.carPrice}/<span className="text-xl">day</span>
               </h3>
-            </div> */}
+              </div> */}
               <div className="flex  flex-col justify-between py-1 w-full">
                 <div>
                   
                   <Link href={`/explore-cars/${booking.carId}`}
-                    className="text-2xl font-black leading-tight text-[#27374D] 
+                    className="text-xl md:text-2xl font-black leading-tight text-[#27374D] 
                           "
                   >
                     {booking.carName}
@@ -91,7 +91,7 @@ const MyBookingsPage = async () => {
                   className="flex items-center justify-between mt-4 
                           pt-4 border-t border-[#DDE6ED]"
                 >
-                  <h3 className="text-2xl font-black text-[#27374D]">
+                  <h3 className="text-xl md:text-2xl  font-black text-[#27374D]">
                     ${booking.carPrice}
                     <span className="text-base font-medium text-[#9DB2BF]">
                       /day
@@ -100,7 +100,7 @@ const MyBookingsPage = async () => {
 
                   <span
                     className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold 
-                             px-4 py-1.5 rounded-full uppercase tracking-wider cursor-pointer transition-transform duration-700 "
+                             px-4 py-1.5 rounded-full uppercase tracking-wider cursor-pointer transition-colors duration-300 "
                   >
                     Cancel Booking
                   </span>

@@ -19,19 +19,18 @@ const MyListingsCarsPage = async () => {
     `${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${user?.id}`,
   );
   const ListingsCars = await res.json();
- 
 
   return (
     <div className="bg-[#DDE6ED]/40 ">
-      <div className=" max-w-7xl mx-auto py-12 px-4 ">
-        <h1 className="text-5xl font-black text-[#27374D] pl-4 mb-10">
+      <div className=" max-w-7xl mx-auto py-8 px-4 md:py-12 ">
+        <h1 className="text-3xl md:text-5xl font-black text-[#27374D] pl-4 mb-10">
           My Added Cars
         </h1>
 
         {ListingsCars.length === 0 && (
-          <div className="text-center py-20 bg-white rounded-3xl border border-[#DDE6ED]">
+          <div className="text-center py-20  bg-white rounded-3xl border border-[#DDE6ED]">
             <h2 className="text-xl font-black text-[#27374D] mb-2">
-              No bookings yet
+              No car added yet
             </h2>
             <p className="text-[#9DB2BF] text-sm">
               Start by exploring our available cars.
@@ -43,14 +42,14 @@ const MyListingsCarsPage = async () => {
           {ListingsCars.map((ListingsCar) => (
             <div
               key={ListingsCar._id}
-              className="flex gap-5 justify-between rounded-2xl border border-[#DDE6ED] 
+              className="flex flex-col sm:flex-row justify-between gap-4 rounded-2xl border border-[#DDE6ED] 
                            bg-white/90 p-5 hover:shadow-md  
                            transition-all duration-300"
             >
-              <div className="flex gap-5">
+              <div className="flex flex-col sm:flex-row gap-5">
                 <Image
                   alt={ListingsCar.name}
-                  className="rounded-lg object-cover"
+                  className="rounded-lg object-cover w-full sm:w-[200px]  shrink-0"
                   src={ListingsCar.image}
                   height={200}
                   width={200}
@@ -77,9 +76,9 @@ const MyListingsCarsPage = async () => {
                     </span>{" "}
                     .<span className="pl-1">{ListingsCar.location}</span>
                   </p>
-                  <p className="text-lg font-black text-[#27374D]">
+                  <p className="text-xl font-black text-[#27374D]">
                     ${ListingsCar.price}
-                    <span className="text-xs font-normal text-[#9DB2BF] ml-1">
+                    <span className="text-xs font-semibold text-[#8898a1] ml-1">
                       / day
                     </span>
                   </p>
@@ -96,18 +95,17 @@ const MyListingsCarsPage = async () => {
               </div>
 
               {/* btn */}
-              <div className="items-center flex flex-col gap-4 justify-center  text-center p-4">
+              <div className="items-center flex  flex-col  gap-4 justify-center   text-center sm:items-center p-4">
                 <Link
                   href={`/my-added-cars/${ListingsCar._id}/edit`}
-                  className=""
+                  className="w-full "
                 >
                   <Button
                     className="bg-[#DDE6ED] text-[#27374D] hover:bg-[#27374D] hover:text-[#DDE6ED] text-xs font-bold 
-                             px-4 py-1.5 rounded-full w-full uppercase  cursor-pointer transition-transform duration-700 "
+                             px-4 py-1.5 rounded-full w-full  uppercase   transition-colors  duration-300 "
                   >
                     edit
                   </Button>
-                  
                 </Link>
                 <ListingsCarsDeleteBtn
                   ListingsCar={ListingsCar}

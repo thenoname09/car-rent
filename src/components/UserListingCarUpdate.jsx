@@ -68,7 +68,7 @@ const UserListingCarUpdate = ({carData}) => {
       
         
     return (
-        <Card className="border bg-stone-100 mx-auto w-200 py-10 mt-5 mb-10 ">
+        <Card className="border bg-stone-100 mx-auto w-full max-w-3xl py-10 mt-5 mb-10 ">
             
        
              <Form

@@ -1,18 +1,21 @@
-
-import AddCarsForm from '@/components/AddCarsForm';
-import React from 'react';
+import AddCarsForm from "@/components/AddCarsForm";
+import React from "react";
 
 const AddCarsPage = () => {
-    return (
-        <div className='bg-[#DDE6ED] '>
-           <h1 className='text-6xl font-bold py-10 text-center'>Add a car listing</h1> 
+  return (
+    <div className="bg-[#DDE6ED]/30 ">
+      <div className="max-w-7xl mx-auto py-12 px-4">
+        <h1 className="text-5xl font-black text-[#27374D] pl-4 mb-10">
+          Add a car listing
+        </h1>
 
-            <AddCarsForm></AddCarsForm>
+                    <AddCarsForm></AddCarsForm>
 
+      </div>
 
-
-        </div>
-    );
+      
+    </div>
+  );
 };
 
 export default AddCarsPage;
