@@ -1,15 +1,19 @@
 "use client";
+import { authClient } from '@/lib/auth-client';
 import { AlertDialog, Button } from '@heroui/react';
 import React from 'react';
 import toast from 'react-hot-toast';
 
 const ListingsCarsDeleteBtn = ({ListingsCar}) => {
-        console.log(ListingsCar._id)
+        
     const handleDelete =  async ()=>{
+      const {data:tokenData} = await authClient.token()
+
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${ListingsCar._id}`,{
 
               method: "DELETE",
-              headers:{ "content-type": "application/json"
+              headers:{ "content-type": "application/json",
+                authorization: `bearer ${tokenData?.token} `
 
               }
         })

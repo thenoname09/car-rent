@@ -1,18 +1,31 @@
 import UserListingCarUpdate from "@/components/UserListingCarUpdate";
+import { auth } from "@/lib/auth";
 import { ArrowLeft } from "lucide-react";
+import { headers } from "next/headers";
 import Link from "next/link";
 import React from "react";
 
 const UpdateCarPage = async ({ params }) => {
   const { id } = await params;
 
+    const {token} = await auth.api.getToken({
+	headers: await headers()
+    })
+
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_API}/cars_info/${id}`,
+    `${process.env.NEXT_PUBLIC_SERVER_API}/cars_info/${id}`,{
+
+
+   	 headers:{
+      authorization: `bearer ${token} `
+    }
+    }
+
     
   );
 
   const carData = await res.json();
-  console.log(carData);
+  
 
   return (
     <div className="bg-[#DDE6ED] ">

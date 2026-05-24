@@ -63,10 +63,16 @@ const BookingModal = ({ CarDetails }) => {
       carName: name,
       bookingDate: new Date(bookingDate),
     };
+
+    const {data:tokenData} = await authClient.token()
     
+
      const res= await fetch("http://localhost:4000/bookings",{
         method: 'post',
-      headers:{'content-type' : 'application/json' },
+      headers:{'content-type' : 'application/json' ,
+      authorization: `bearer ${tokenData?.token} `
+
+       },
       body : JSON.stringify(bookingData)
 
     })

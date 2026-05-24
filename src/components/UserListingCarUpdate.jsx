@@ -48,12 +48,17 @@ const UserListingCarUpdate = ({carData}) => {
         const formData = new FormData(e.currentTarget);
     
         const updatedcarinfo = Object.fromEntries(formData.entries());
+
+        const {data:tokenData} = await authClient.token()
     
         
     
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${_id}`, {
           method: "PATCH",
-          headers: { "content-type": "application/json" },
+          headers: { "content-type": "application/json" ,
+                  authorization: `bearer ${tokenData?.token}`
+                      
+            },
           body: JSON.stringify(updatedcarinfo),
         });
         const data = await res.json();

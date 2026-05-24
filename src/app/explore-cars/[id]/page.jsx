@@ -1,13 +1,29 @@
 import BookingModal from "@/components/BookingModal";
+import { auth } from "@/lib/auth";
 import { Button } from "@heroui/react";
 import { ArrowLeft, CalendarDays, MapPin, User, Users } from "lucide-react";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const CarDetailsPage = async ({ params }) => {
   const { id } = await params;
-  const res = await fetch(`http://localhost:4000/cars_info/${id}`);
+
+  const {token} = await auth.api.getToken({
+
+    headers: await headers()
+    })
+  
+  console.log(token)
+  const res = await fetch(`http://localhost:4000/cars_info/${id}`, {
+
+    headers:{
+      authorization: `bearer ${token} `
+    }
+    }
+  );
+
   const CarDetails = await res.json();
 
   const {

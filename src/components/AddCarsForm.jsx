@@ -45,12 +45,14 @@ export default function RegisterPage() {
       userEmail: user?.email,
       
     };
-
+    const {data:tokenData} = await authClient.token()
     
 
     const res = await fetch("http://localhost:4000/cars_info", {
       method: "post",
-      headers: { "content-type": "application/json" },
+      headers: { "content-type": "application/json",
+         authorization: `bearer ${tokenData?.token}`
+       },
       body: JSON.stringify(finalData),
     });
     const data = await res.json();

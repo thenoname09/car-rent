@@ -14,9 +14,18 @@ const MyListingsCarsPage = async () => {
     headers: await headers(), // you need to pass the headers object.
   });
 
+   const {token} = await auth.api.getToken({
+	headers: await headers()
+    })
+
   const user = session?.user;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${user?.id}`,
+    `${process.env.NEXT_PUBLIC_SERVER_API}/my_car_listing/${user?.id}`,{
+      headers:{
+        authorization: `bearer ${token} `
+        }
+    }
+
   );
   const ListingsCars = await res.json();
 
