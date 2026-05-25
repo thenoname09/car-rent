@@ -10,10 +10,10 @@ const SearchBar = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const urlSearch = searchParams.get("search") || "";
-    setSearch(urlSearch);
-  }, [searchParams]);
+  // useEffect(() => {
+  //   const urlSearch = searchParams.get("search") || "";
+  //   setSearch(urlSearch);
+  // }, [searchParams]);
 
  const handleSearch = () => {
     const params = new URLSearchParams(searchParams.toString())
