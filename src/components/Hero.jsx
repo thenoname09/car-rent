@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import BannerMotionText from "./BannerMotionText";
 
 const Hero = () => {
   return (
@@ -32,26 +33,10 @@ const Hero = () => {
 
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/15" />
+          
+          <BannerMotionText></BannerMotionText>
 
-          {/* Centered content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-8">
-            <h1
-              className="text-white text-6xl md:text-7xl lg:text-8xl font-black italic
-                         tracking-tight text-center  "
-            >
-              Drive Your Dream Car.
-            </h1>
-            {/* <p className=" text-white font-semibold text-xl pb-6 italic ">Choose from 200+ premium vehicles. Instant booking, flexible returns, and zero hidden fees.</p> */}
-
-            <Link
-              href="/explore"
-              className="bg-white text-black font-semibold text-sm px-10 py-4
-                         rounded-full hover:bg-gray-100 transition-all duration-200
-                         shadow-xl hover:-translate-y-0.5"
-            >
-              Booking Now
-            </Link>
-          </div>
+         
 
         </div>
   );

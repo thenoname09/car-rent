@@ -39,6 +39,7 @@ const LoginPage = () => {
     });
 
     console.log({ data, error });
+    
 
     if (data) {
       router.refresh();

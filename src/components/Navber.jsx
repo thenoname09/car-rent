@@ -34,15 +34,15 @@ const router = useRouter()
     <nav
       className={`sticky top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/70 backdrop-blur-md shadow-sm py-2"
-          : "bg-slate-50 py-2"
+          ? "bg-white/80 backdrop-blur-md shadow-sm py-2"
+          : "bg-white  border-b border-transparent py-2"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <span className="font-extrabold text-2xl tracking-tight text-slate-900">
+              <span className="font-extrabold text-3xl tracking-tight text-[#252525]">
                 DriveFleet
               </span>
             </Link>
@@ -51,25 +51,25 @@ const router = useRouter()
           <div className="hidden md:flex gap-8 items-center">
             <Link
               href="/"
-              className="font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="font-medium text-[#27374D] hover:text-[#252525] transition-colors"
             >
               Home
             </Link>
             <Link
               href="/explore-cars"
-              className="font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="font-medium text-[#27374D] hover:text-[#252525]transition-colors"
             >
               Explore Cars
             </Link>
             <Link
               href="/add-cars"
-              className="font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="font-medium text-[#27374D] hover:text-[#252525] transition-colors"
             >
               Add Cars
             </Link>
             <Link
               href="/my-bookings"
-              className="font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="font-medium text-[#27374D] hover:text-[#252525] transition-colors"
             >
               My Bookings
             </Link>
@@ -79,9 +79,12 @@ const router = useRouter()
             {!user ? (
               <Link
                 href="/login"
-                className="font-medium text-slate-700 hover:text-blue-600 transition-colors"
+                className=""
               >
-                Login
+                <Button className={"font-medium  bg-[#27374D]/80 transition-colors duration-300 text-[#DDE6ED]  hover:bg-[#27374D]"}>
+                   Login
+                </Button>
+                
               </Link>
             ) : (
               <Dropdown>
