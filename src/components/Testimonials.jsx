@@ -37,7 +37,7 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14 items-start">
           {/* Left */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-left gap-3 mb-5">
               <div className="" />
               <p className="text-white/50 text-xs font-bold tracking-[4px] uppercase">
                 What Our Clients Say
