@@ -8,7 +8,7 @@ const BannerMotionText = () => {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-8">
 
       <motion.h1
-        className="text-white text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tight text-center"
+        className="text-white text-6xl md:text-7xl lg:text-8xl font-black italic  text-center"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}

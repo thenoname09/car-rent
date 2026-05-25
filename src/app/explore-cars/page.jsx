@@ -21,7 +21,7 @@ const ExploreCarsPage = async ({ searchParams }) => {
       >
         <div>
           <p
-            className="text-[#526382] text-xs font-bold tracking-[4px] 
+            className="text-[#526D82] text-xs font-bold tracking-[4px] 
                       uppercase mb-2"
           >
             Browse Fleet

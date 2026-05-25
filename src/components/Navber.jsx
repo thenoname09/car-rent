@@ -91,9 +91,9 @@ const router = useRouter()
                 <Button
                   aria-label="Menu"
                   variant="letter-soft"
-                  className="flex items-center gap-3 px-4 py-6 border  bg-[#27374D]/70 rounded-full "
+                  className="flex items-center gap-3 px-4 py-6   bg-[#27374D]/70 rounded-full "
                 >
-                  <Avatar size="sm">
+                  <Avatar size="sm" className="border-none">
 
                     <Avatar.Image referrerPolicy="no-referrer" alt={user.name} src={user.image} />
                     <Avatar.Fallback>

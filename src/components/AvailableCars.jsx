@@ -7,12 +7,15 @@ import Link from "next/link";
 const AvailableCars = async () => {
     const carsData = await availableCars()
   return (
+    <div className="bg-[#DDE6ED]/30">
+
+   
   <div className="py-16 px-4 max-w-7xl mx-auto">
 
       
       <div className="flex items-center justify-between mb-10">
         <div>
-          <p className="text-yellow-500 text-xs font-semibold tracking-[4px] uppercase mb-2">
+          <p className="text-[#526D82] text-xs font-semibold tracking-[4px] uppercase mb-2">
             Our Fleet
           </p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white tracking-tight">
@@ -39,6 +42,7 @@ const AvailableCars = async () => {
       </div>
 
     </div>
+     </div>
   );
 };
 
