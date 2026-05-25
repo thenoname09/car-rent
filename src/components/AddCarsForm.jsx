@@ -48,7 +48,7 @@ export default function RegisterPage() {
     const {data:tokenData} = await authClient.token()
     
 
-    const res = await fetch("http://localhost:4000/cars_info", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/cars_info`, {
       method: "post",
       headers: { "content-type": "application/json",
          authorization: `bearer ${tokenData?.token}`

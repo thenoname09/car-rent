@@ -33,7 +33,7 @@ const BannerMotionText = () => {
       >
         <Link
           href="/explore-cars"
-          className="bg-white text-black font-semibold text-sm px-10 py-4 rounded-full hover:bg-gray-100 transition-all duration-200 shadow-xl hover:-translate-y-0.5 inline-block"
+          className="bg-white text-black font-semibold text-sm px-10 py-4 rounded-full hover:bg-[#27374D] hover:text-white transition-all duration-200 shadow-xl hover:-translate-y-0.5 inline-block"
         >
           Booking Now
         </Link>

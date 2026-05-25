@@ -67,7 +67,7 @@ const BookingModal = ({ CarDetails }) => {
     const {data:tokenData} = await authClient.token()
     
 
-     const res= await fetch("http://localhost:4000/bookings",{
+     const res= await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/bookings`,{
         method: 'post',
       headers:{'content-type' : 'application/json' ,
       authorization: `bearer ${tokenData?.token} `
