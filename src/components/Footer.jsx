@@ -11,7 +11,7 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div className="flex flex-col gap-5  lg:col-span-2 ">
-            {/* Logo */}
+            
             <Link href="/" className="flex items-center gap-2 w-fit">
               
               <span className="text-white font-black text-2xl tracking-widest ">
