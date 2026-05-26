@@ -42,9 +42,9 @@ DriveFleet is a full-stack premium car rental platform where users can explore a
 # 📦 Installation & Setup
 Prerequisites
 
-Node.js v18+
-MongoDB Atlas account
-Google OAuth credentials
+- Node.js v18+
+- MongoDB Atlas account
+- Google OAuth credentials
 
 
 
@@ -53,6 +53,6 @@ Google OAuth credentials
 
 # 🚀 Deployment
 
-Client → Vercel
-Server → Vercel
-Database → MongoDB Atlas
+- Client → Vercel
+- Server → Vercel
+- Database → MongoDB Atlas
