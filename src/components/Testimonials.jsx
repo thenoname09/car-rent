@@ -36,8 +36,8 @@ const Testimonials = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14 items-start">
           {/* Left */}
-          <div>
-            <div className="flex items-left gap-3 mb-5">
+          <div className="text-left">
+            <div className="flex  gap-3 mb-5">
               <div className="" />
               <p className="text-white/50 text-xs font-bold tracking-[4px] uppercase">
                 What Our Clients Say
@@ -54,8 +54,8 @@ const Testimonials = () => {
           <div className="flex items-center lg:pt-16">
             <p className="text-white/40 text-sm px-5 leading-relaxed">
               Don't just take our word for it — thousands of satisfied customers 
-  have experienced the DriveFleet difference. From seamless bookings 
-  to premium vehicles, see what our clients are saying about us.
+                 have experienced the DriveFleet difference. From seamless bookings 
+                            to premium vehicles, see what our clients are saying about us.
             </p>
           </div>
         </div>

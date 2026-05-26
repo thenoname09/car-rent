@@ -18,7 +18,7 @@ const AvailableCars = async () => {
           <p className="text-[#526D82] text-xs font-semibold tracking-[4px] uppercase mb-2">
             Our Fleet
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-black text-[#27374D] dark:text-white tracking-tight">
             Available Cars
           </h2>
         </div>

@@ -201,7 +201,7 @@ const router = useRouter()
                 </Link>
                 <Link href="/register">
                   <Button color="primary" className="rounded-xl w-full">
-                    Join Free
+                    Register
                   </Button>
                 </Link>
               </div>

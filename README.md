@@ -1,13 +1,15 @@
-DriveFleet — Premium Car Rental Platform
+#  DriveFleet — Premium Car Rental Platform
 
 Live Site: https://car-rent-sepia-phi.vercel.app/
 Client Repo: https://github.com/thenoname09/car-rent
 Server Repo: https://github.com/thenoname09/A9-server
 
-📌 About DriveFleet
+---
+
+##  📌 About DriveFleet
 DriveFleet is a full-stack premium car rental platform where users can explore available vehicles, view car details, make bookings, manage their listings, and maintain their profiles — all in one place.
 
-✨ Key Features
+## ✨ Key Features
 
 🔐 Secure Authentication — Email/password login and Google OAuth via Better Auth with JWT stored in HTTPOnly cookies for secure session management.
 🚘 Car Listings & CRUD — Users can add, update, and delete their own car listings with full details including type, price, location, seat capacity, and availability status.
@@ -17,26 +19,27 @@ DriveFleet is a full-stack premium car rental platform where users can explore a
 ⚡ Smooth Animations — Page elements animate in using Framer Motion (motion/react) for a premium user experience on the hero banner and key sections.
 
 
-🛠️ Tech Stack
-Frontend
+# 🛠️ Tech Stack
 
-Next.js 14 — App Router
-Tailwind CSS — Styling
-HeroUI — UI Components
-Lucide React — Icons
-Motion/React — Animations
-React Hot Toast — Notifications
-React Spinners — Loading indicators
+## Frontend
+- Next.js 14 (App Router)
+- Tailwind CSS
+- HeroUI
+- Lucide React
+- Framer Motion
+- React Hot Toast
+- React Spinners
 
-Backend
+## Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Better Auth
+- JWT Authentication
 
-Node.js + Express.js
-MongoDB — Database
-Better Auth — Authentication
-JWT — Token-based auth via HTTPOnly cookies
+---
 
-
-📦 Installation & Setup
+# 📦 Installation & Setup
 Prerequisites
 
 Node.js v18+
@@ -45,10 +48,10 @@ Google OAuth credentials
 
 
 
-🔒 Private Routes
-RouteDescription/add-carsAdd a new car listing/my-bookingsView all your bookings/my-added-carsManage your car listings/my-added-cars/[id]Update a car listing
+# 🔒 Private Routes
+/add-carsAdd a new car listing/my-bookingsView all your bookings/my-added-carsManage your car listings/my-added-cars/[id]Update a car listing
 
-🚀 Deployment
+# 🚀 Deployment
 
 Client → Vercel
 Server → Vercel

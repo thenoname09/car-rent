@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "My Bookings — DriveFleet",
+  title: "My Bookings - DriveFleet",
   description: "View and manage all your car rental bookings.",
 };
 

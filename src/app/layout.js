@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "DriveFleet — Premium Car Rental Platform",
+  title: "DriveFleet - Premium Car Rental Platform",
   description: "DriveFleet is a premium car rental platform. Explore 200+ vehicles, instant booking, zero hidden fees, and 24/7 support.",
 };
 
