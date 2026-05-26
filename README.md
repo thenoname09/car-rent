@@ -1,8 +1,8 @@
 #  DriveFleet — Premium Car Rental Platform
 
-Live Site: https://car-rent-sepia-phi.vercel.app/
-Client Repo: https://github.com/thenoname09/car-rent
-Server Repo: https://github.com/thenoname09/A9-server
+- Live Site: https://car-rent-sepia-phi.vercel.app/
+- Client Repo: https://github.com/thenoname09/car-rent
+- Server Repo: https://github.com/thenoname09/A9-server
 
 ---
 
@@ -11,12 +11,12 @@ DriveFleet is a full-stack premium car rental platform where users can explore a
 
 ## ✨ Key Features
 
-🔐 Secure Authentication — Email/password login and Google OAuth via Better Auth with JWT stored in HTTPOnly cookies for secure session management.
-🚘 Car Listings & CRUD — Users can add, update, and delete their own car listings with full details including type, price, location, seat capacity, and availability status.
-📅 Booking System — Logged-in users can book available cars with options for driver assistance and special notes. 
-🔍 Search & Filter — Search cars by name using MongoDB $regex operator and filter by car type for a smooth browsing experience.
-📱 Fully Responsive Design — Optimized for mobile, tablet, and desktop using Tailwind CSS with a clean, recruiter-friendly UI using a consistent navy blue color palette.
-⚡ Smooth Animations — Page elements animate in using Framer Motion (motion/react) for a premium user experience on the hero banner and key sections.
+- 🔐 Secure Authentication — Email/password login and Google OAuth via Better Auth with JWT stored in HTTPOnly cookies for secure session management.
+- 🚘 Car Listings & CRUD — Users can add, update, and delete their own car listings with full details including type, price, location, seat capacity, and availability status.
+- 📅 Booking System — Logged-in users can book available cars with options for driver assistance and special notes. 
+- 🔍 Search & Filter — Search cars by name using MongoDB $regex operator and filter by car type for a smooth browsing experience.
+- 📱 Fully Responsive Design — Optimized for mobile, tablet, and desktop using Tailwind CSS with a clean, recruiter-friendly UI using a consistent navy blue color palette.
+- ⚡ Smooth Animations — Page elements animate in using Framer Motion (motion/react) for a premium user experience on the hero banner and key sections.
 
 
 # 🛠️ Tech Stack
