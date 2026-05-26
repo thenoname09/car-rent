@@ -5,6 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "My Bookings — DriveFleet",
+  description: "View and manage all your car rental bookings.",
+};
+
 const MyBookingsPage = async () => {
 
   const session = await auth.api.getSession({

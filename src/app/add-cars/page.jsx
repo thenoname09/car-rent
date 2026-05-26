@@ -1,6 +1,11 @@
 import AddCarsForm from "@/components/AddCarsForm";
 import React from "react";
 
+export const metadata = {
+  title: "Add Car — DriveFleet",
+  description: "List your car on DriveFleet and start earning.",
+};
+
 const AddCarsPage = () => {
   return (
     <div className="bg-[#DDE6ED]/30 ">

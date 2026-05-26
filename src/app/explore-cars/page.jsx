@@ -3,6 +3,11 @@ import SearchBar from "@/components/SearchBar";
 import { CarsData } from "@/lib/data";
 import React from "react";
 
+export const metadata = {
+  title: "Explore Cars — DriveFleet",
+  description: "Browse 200+ premium rental cars.",
+};
+
 const ExploreCarsPage = async ({ searchParams }) => {
   const sParams = await searchParams;
 

@@ -9,6 +9,11 @@ import Link from "next/link";
 import React from "react";
 import { IoLocation } from "react-icons/io5";
 
+export const metadata = {
+  title: "My Added Cars — DriveFleet",
+  description: "Manage your car listings on DriveFleet. Edit, update, or delete your added vehicles.",
+};
+
 const MyListingsCarsPage = async () => {
   const session = await auth.api.getSession({
     headers: await headers(), // you need to pass the headers object.

@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+DriveFleet — Premium Car Rental Platform
 
-## Getting Started
+Live Site: https://car-rent-sepia-phi.vercel.app/
+Client Repo: https://github.com/thenoname09/car-rent
+Server Repo: https://github.com/thenoname09/A9-server
 
-First, run the development server:
+📌 About DriveFleet
+DriveFleet is a full-stack premium car rental platform where users can explore available vehicles, view car details, make bookings, manage their listings, and maintain their profiles — all in one place.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔐 Secure Authentication — Email/password login and Google OAuth via Better Auth with JWT stored in HTTPOnly cookies for secure session management.
+🚘 Car Listings & CRUD — Users can add, update, and delete their own car listings with full details including type, price, location, seat capacity, and availability status.
+📅 Booking System — Logged-in users can book available cars with options for driver assistance and special notes. 
+🔍 Search & Filter — Search cars by name using MongoDB $regex operator and filter by car type for a smooth browsing experience.
+📱 Fully Responsive Design — Optimized for mobile, tablet, and desktop using Tailwind CSS with a clean, recruiter-friendly UI using a consistent navy blue color palette.
+⚡ Smooth Animations — Page elements animate in using Framer Motion (motion/react) for a premium user experience on the hero banner and key sections.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🛠️ Tech Stack
+Frontend
 
-## Learn More
+Next.js 14 — App Router
+Tailwind CSS — Styling
+HeroUI — UI Components
+Lucide React — Icons
+Motion/React — Animations
+React Hot Toast — Notifications
+React Spinners — Loading indicators
 
-To learn more about Next.js, take a look at the following resources:
+Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Node.js + Express.js
+MongoDB — Database
+Better Auth — Authentication
+JWT — Token-based auth via HTTPOnly cookies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+📦 Installation & Setup
+Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Node.js v18+
+MongoDB Atlas account
+Google OAuth credentials
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+🔒 Private Routes
+RouteDescription/add-carsAdd a new car listing/my-bookingsView all your bookings/my-added-carsManage your car listings/my-added-cars/[id]Update a car listing
+
+🚀 Deployment
+
+Client → Vercel
+Server → Vercel
+Database → MongoDB Atlas
