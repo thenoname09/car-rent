@@ -1,4 +1,4 @@
-#  DriveFleet — Premium Car Rental Platform
+#  DriveFleet - Premium Car Rental Platform
 
 - Live Site: https://car-rent-sepia-phi.vercel.app/
 - Client Repo: https://github.com/thenoname09/car-rent
